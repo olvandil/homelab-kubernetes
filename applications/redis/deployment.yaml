@@ -19,7 +19,14 @@ spec:
       containers:
         - name: redis
           image: redis:8
-
+          args:
+            - redis-server
+            - --dir
+            - /data
+            - --dbfilename
+            - dump.rdb
+            - --appendonly
+            - "yes"
           ports:
             - containerPort: 6379
 
