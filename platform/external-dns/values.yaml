@@ -1,0 +1,15 @@
+provider:
+  name: cloudflare
+env:
+  - name: CF_API_TOKEN
+    valueFrom:
+      secretKeyRef:
+        name: cloudflare-api-token-secret
+        key: api-token
+sources:
+  - ingress
+domainFilters:
+  - watworld.uk
+policy: sync
+registry: txt
+txtOwnerId: homelab-k3s
