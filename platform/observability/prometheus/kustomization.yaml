@@ -12,5 +12,5 @@ helmCharts:
     version: 87.3.0
     releaseName: prometheus
     namespace: monitoring
-    includeCRDs: true
+    includeCRDs: false
     valuesFile: values.yaml
