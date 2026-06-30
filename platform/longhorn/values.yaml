@@ -10,3 +10,9 @@ persistence:
   defaultClass: true
   defaultClassReplicaCount: 2
   reclaimPolicy: Retain
+
+metrics:
+  serviceMonitor:
+    enabled: true
+    additionalLabels:
+      release: prometheus
