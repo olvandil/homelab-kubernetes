@@ -7,3 +7,4 @@ resources:
   - appset-applications.yaml
   - project-platform.yaml
   - project-applications.yaml
+  - argocd-cm.yaml
