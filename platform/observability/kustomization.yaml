@@ -3,5 +3,5 @@ kind: Kustomization
 
 resources:
   - grafana
-  - prometheus-crds-application.yaml
-  - prometheus-stack-application.yaml
+  - prometheus/prometheus-crds-application.yaml
+  - prometheus/prometheus-stack-application.yaml
