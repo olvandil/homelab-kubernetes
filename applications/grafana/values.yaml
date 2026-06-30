@@ -1,0 +1,16 @@
+persistence:
+  enabled: true
+  type: pvc
+  size: 5Gi
+  storageClassName: longhorn
+
+admin:
+  existingSecret: grafana-admin-secret
+  userKey: admin-user
+  passwordKey: admin-password
+
+service:
+  type: ClusterIP
+
+ingress:
+  enabled: false
