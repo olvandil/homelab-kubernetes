@@ -1,27 +1,58 @@
 :root {
-  --wat-navy: #061b45;
-  --wat-navy-deep: #03102b;
-  --wat-cyan: #08c7e8;
-  --wat-coral: #ff6547;
-  --wat-cream: #fff0c7;
+  color-scheme: dark;
+  --wat-bg: #080d16;
+  --wat-surface: #101722;
+  --wat-surface-raised: #151e2b;
+  --wat-surface-hover: #1b2635;
+  --wat-border: #263244;
+  --wat-border-strong: #35445a;
+  --wat-text: #e8edf5;
+  --wat-text-muted: #94a3b8;
+  --wat-cyan: #38bdf8;
+  --wat-cyan-strong: #0ea5e9;
+  --wat-amber: #f59e0b;
+  --wat-green: #34d399;
+  --wat-red: #fb7185;
+  --wat-shadow: 0 1rem 2.5rem rgb(0 0 0 / 28%);
+}
+
+html,
+body,
+#app,
+.page-wrapper,
+.page,
+.page__content {
+  background: var(--wat-bg);
+  color: var(--wat-text);
 }
 
 body {
-  background-color: var(--wat-navy-deep);
+  background-image:
+    radial-gradient(circle at 80% -10%, rgb(56 189 248 / 7%), transparent 32rem),
+    linear-gradient(180deg, #0a101a 0%, var(--wat-bg) 22rem);
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--wat-cyan);
+}
+
+a:hover {
+  color: #7dd3fc;
 }
 
 .sidebar {
-  background:
-    radial-gradient(circle at 15% 10%, rgb(8 199 232 / 22%), transparent 28rem),
-    linear-gradient(165deg, var(--wat-navy) 0%, var(--wat-navy-deep) 72%);
-  box-shadow: 0.25rem 0 1.5rem rgb(3 16 43 / 35%);
+  border-right: 1px solid var(--wat-border);
+  background: #0b111b;
+  box-shadow: none;
 }
 
 .sidebar__logo {
-  height: 7.25rem;
-  margin: 0.75rem 1rem 0.25rem;
-  background: url("./watworldcd-logo.png") center / 5.75rem no-repeat;
-  filter: drop-shadow(0 0.5rem 0.8rem rgb(3 16 43 / 55%));
+  position: relative;
+  height: 7.5rem;
+  margin: 0.75rem 1rem 0.5rem;
+  background: url("./watworldcd-mark-v2.png") center 0.15rem / 5.4rem no-repeat;
+  filter: drop-shadow(0 0.5rem 1.1rem rgb(0 0 0 / 45%));
 }
 
 .sidebar__logo img {
@@ -30,43 +61,139 @@ body {
 
 .sidebar__logo::after {
   position: absolute;
-  top: 6.65rem;
+  right: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  color: var(--wat-cream);
-  content: "WatWorldCD";
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  color: var(--wat-text);
+  content: "WATWORLD CD";
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-align: center;
-  text-transform: uppercase;
 }
 
-.sidebar__nav-item:hover,
+.sidebar__nav-item {
+  margin: 0.15rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 0.45rem;
+  color: var(--wat-text-muted);
+}
+
+.sidebar__nav-item:hover {
+  border-color: var(--wat-border);
+  background: var(--wat-surface);
+  color: var(--wat-text);
+}
+
 .sidebar__nav-item--active {
-  background: linear-gradient(90deg, rgb(8 199 232 / 22%), rgb(255 101 71 / 10%));
-  border-left-color: var(--wat-coral);
+  border-color: rgb(56 189 248 / 25%);
+  background: rgb(56 189 248 / 10%);
+  color: var(--wat-cyan);
+}
+
+.top-bar {
+  border-bottom: 1px solid var(--wat-border);
+  background: rgb(11 17 27 / 92%);
+  box-shadow: none;
+  color: var(--wat-text);
+  backdrop-filter: blur(0.75rem);
+}
+
+.top-bar__title,
+.top-bar__breadcrumbs,
+.top-bar__breadcrumbs a {
+  color: var(--wat-text);
+}
+
+.argo-table-list,
+.argo-table-list__row,
+.argo-table-list__head,
+.argo-table-list__cell,
+.application-details,
+.application-status-panel,
+.application-status-panel__item,
+.applications-list__entry,
+.project-details,
+.settings,
+.white-box,
+.argo-form-row {
+  border-color: var(--wat-border);
+  background-color: var(--wat-surface);
+  color: var(--wat-text);
+}
+
+.argo-table-list__row:hover,
+.applications-list__entry:hover {
+  background-color: var(--wat-surface-hover);
+}
+
+.argo-table-list__head,
+.application-status-panel__item-title,
+.field__label,
+.form-field__label {
+  color: var(--wat-text-muted);
+}
+
+input,
+select,
+textarea,
+.argo-field,
+.argo-select,
+.argo-search-bar {
+  border-color: var(--wat-border-strong) !important;
+  background: #0c131e !important;
+  color: var(--wat-text) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--wat-cyan-strong) !important;
+  box-shadow: 0 0 0 0.18rem rgb(14 165 233 / 18%) !important;
+}
+
+.argo-button--base,
+button[type="submit"] {
+  border: 1px solid #38bdf8;
+  border-radius: 0.4rem;
+  background: var(--wat-cyan-strong);
+  box-shadow: none;
+  color: #03111d;
+  font-weight: 700;
+}
+
+.argo-button--base:hover,
+button[type="submit"]:hover {
+  background: var(--wat-cyan);
+}
+
+.argo-button--base:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--wat-cyan);
+  outline-offset: 2px;
 }
 
 .login {
   background:
-    radial-gradient(circle at 20% 15%, rgb(8 199 232 / 22%), transparent 30rem),
-    radial-gradient(circle at 85% 80%, rgb(255 101 71 / 18%), transparent 28rem),
-    linear-gradient(145deg, var(--wat-navy) 0%, var(--wat-navy-deep) 70%);
+    linear-gradient(rgb(8 13 22 / 88%), rgb(8 13 22 / 96%)),
+    radial-gradient(circle at 18% 12%, rgb(56 189 248 / 18%), transparent 28rem),
+    radial-gradient(circle at 82% 88%, rgb(245 158 11 / 9%), transparent 24rem),
+    var(--wat-bg);
 }
 
 .login__box {
-  border: 1px solid rgb(8 199 232 / 24%);
-  border-radius: 1.25rem;
-  background: rgb(6 27 69 / 78%);
-  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 35%);
-  backdrop-filter: blur(1rem);
+  border: 1px solid var(--wat-border);
+  border-radius: 0.75rem;
+  background: rgb(16 23 34 / 94%);
+  box-shadow: var(--wat-shadow);
 }
 
 .login__logo {
-  height: 13rem;
-  background: url("./watworldcd-logo.png") center / 9.5rem no-repeat;
-  filter: drop-shadow(0 0.85rem 1rem rgb(0 0 0 / 35%));
+  position: relative;
+  height: 12rem;
+  background: url("./watworldcd-mark-v2.png") center 0 / 8rem no-repeat;
+  filter: drop-shadow(0 0.8rem 1.4rem rgb(0 0 0 / 42%));
 }
 
 .login__logo img {
@@ -75,59 +202,72 @@ body {
 
 .login__logo::after {
   position: absolute;
-  top: 11rem;
+  right: 0;
+  bottom: 0.15rem;
   left: 0;
-  width: 100%;
-  color: var(--wat-cream);
+  color: var(--wat-text);
   content: "WatWorldCD";
-  font-size: 1.25rem;
-  font-weight: 850;
-  letter-spacing: 0.14em;
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
   text-align: center;
-}
-
-.argo-button--base,
-button[type="submit"] {
-  border: 0;
-  background: linear-gradient(110deg, var(--wat-cyan), var(--wat-coral));
-  box-shadow: 0 0.55rem 1.25rem rgb(8 199 232 / 20%);
-  color: var(--wat-navy-deep);
-  font-weight: 750;
-}
-
-.top-bar {
-  border-bottom: 1px solid rgb(8 199 232 / 20%);
-  background: rgb(255 255 255 / 96%);
 }
 
 .argo-banner,
 .ui-banner {
-  background: linear-gradient(90deg, var(--wat-cyan), var(--wat-coral));
-  color: var(--wat-navy-deep);
-  font-weight: 750;
-  letter-spacing: 0.03em;
+  border-top: 1px solid rgb(56 189 248 / 20%);
+  background: #0e1b28;
+  color: #bae6fd;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
-.application-status-panel__item-value,
 .health-status--healthy,
-.sync-status--synced {
-  color: #00a9c6;
+.sync-status--synced,
+.application-status-panel__item-value {
+  color: var(--wat-green);
+}
+
+.health-status--degraded,
+.health-status--missing,
+.sync-status--out-of-sync {
+  color: var(--wat-red);
+}
+
+.health-status--progressing,
+.health-status--suspended {
+  color: var(--wat-amber);
+}
+
+code,
+pre,
+.code-viewer,
+.logs-viewer {
+  border-color: var(--wat-border);
+  background: #060a11 !important;
+  color: #cbd5e1;
+}
+
+@media (max-width: 768px) {
+  .sidebar__logo::after {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .login__logo,
-  .sidebar__logo {
-    animation: watworld-arrive 500ms ease-out both;
+  .login__box {
+    animation: watworld-enter 280ms ease-out both;
   }
 
-  @keyframes watworld-arrive {
+  @keyframes watworld-enter {
     from {
       opacity: 0;
-      transform: translateY(0.5rem) scale(0.96);
+      transform: translateY(0.4rem);
     }
     to {
       opacity: 1;
-      transform: translateY(0) scale(1);
+      transform: translateY(0);
     }
   }
 }
