@@ -1,0 +1,133 @@
+:root {
+  --wat-navy: #061b45;
+  --wat-navy-deep: #03102b;
+  --wat-cyan: #08c7e8;
+  --wat-coral: #ff6547;
+  --wat-cream: #fff0c7;
+}
+
+body {
+  background-color: var(--wat-navy-deep);
+}
+
+.sidebar {
+  background:
+    radial-gradient(circle at 15% 10%, rgb(8 199 232 / 22%), transparent 28rem),
+    linear-gradient(165deg, var(--wat-navy) 0%, var(--wat-navy-deep) 72%);
+  box-shadow: 0.25rem 0 1.5rem rgb(3 16 43 / 35%);
+}
+
+.sidebar__logo {
+  height: 7.25rem;
+  margin: 0.75rem 1rem 0.25rem;
+  background: url("./watworldcd-logo.png") center / 5.75rem no-repeat;
+  filter: drop-shadow(0 0.5rem 0.8rem rgb(3 16 43 / 55%));
+}
+
+.sidebar__logo img {
+  display: none;
+}
+
+.sidebar__logo::after {
+  position: absolute;
+  top: 6.65rem;
+  left: 0;
+  width: 100%;
+  color: var(--wat-cream);
+  content: "WatWorldCD";
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sidebar__nav-item:hover,
+.sidebar__nav-item--active {
+  background: linear-gradient(90deg, rgb(8 199 232 / 22%), rgb(255 101 71 / 10%));
+  border-left-color: var(--wat-coral);
+}
+
+.login {
+  background:
+    radial-gradient(circle at 20% 15%, rgb(8 199 232 / 22%), transparent 30rem),
+    radial-gradient(circle at 85% 80%, rgb(255 101 71 / 18%), transparent 28rem),
+    linear-gradient(145deg, var(--wat-navy) 0%, var(--wat-navy-deep) 70%);
+}
+
+.login__box {
+  border: 1px solid rgb(8 199 232 / 24%);
+  border-radius: 1.25rem;
+  background: rgb(6 27 69 / 78%);
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 35%);
+  backdrop-filter: blur(1rem);
+}
+
+.login__logo {
+  height: 13rem;
+  background: url("./watworldcd-logo.png") center / 9.5rem no-repeat;
+  filter: drop-shadow(0 0.85rem 1rem rgb(0 0 0 / 35%));
+}
+
+.login__logo img {
+  display: none;
+}
+
+.login__logo::after {
+  position: absolute;
+  top: 11rem;
+  left: 0;
+  width: 100%;
+  color: var(--wat-cream);
+  content: "WatWorldCD";
+  font-size: 1.25rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-align: center;
+}
+
+.argo-button--base,
+button[type="submit"] {
+  border: 0;
+  background: linear-gradient(110deg, var(--wat-cyan), var(--wat-coral));
+  box-shadow: 0 0.55rem 1.25rem rgb(8 199 232 / 20%);
+  color: var(--wat-navy-deep);
+  font-weight: 750;
+}
+
+.top-bar {
+  border-bottom: 1px solid rgb(8 199 232 / 20%);
+  background: rgb(255 255 255 / 96%);
+}
+
+.argo-banner,
+.ui-banner {
+  background: linear-gradient(90deg, var(--wat-cyan), var(--wat-coral));
+  color: var(--wat-navy-deep);
+  font-weight: 750;
+  letter-spacing: 0.03em;
+}
+
+.application-status-panel__item-value,
+.health-status--healthy,
+.sync-status--synced {
+  color: #00a9c6;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .login__logo,
+  .sidebar__logo {
+    animation: watworld-arrive 500ms ease-out both;
+  }
+
+  @keyframes watworld-arrive {
+    from {
+      opacity: 0;
+      transform: translateY(0.5rem) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+}
