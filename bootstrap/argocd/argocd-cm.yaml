@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 data:
   kustomize.buildOptions: --enable-helm
-  ui.cssurl: https://cdn.jsdelivr.net/gh/olvandil/homelab-kubernetes@main/bootstrap/argocd/branding/watworldcd.css?v=2
+  ui.cssurl: https://cdn.jsdelivr.net/gh/olvandil/homelab-kubernetes@main/bootstrap/argocd/branding/watworldcd-v2.css
   ui.bannercontent: WATWORLD / CONTINUOUS DELIVERY
   ui.bannerpermanent: "true"
   ui.bannerposition: bottom
